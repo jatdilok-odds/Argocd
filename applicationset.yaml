@@ -8,19 +8,21 @@ spec:
   - list:
       elements:
       - namespace: dev
+      - namespace: uat
+      - namespace: prod
   template:
     metadata:
-      name: app-example-dev
+      name: 'app-example-{{namespace}}'
       namespace: argocd
     spec:
-      project: app-example
+      project: 'app-example'
       source:    
         repoURL: 'https://gitlab.com/learning-devops101/argocd.git'
         targetRevision: HEAD
         path: apps/dev
       destination: 
         server: https://kubernetes.default.svc
-        namespace: dev
+        namespace: '{{namespace}}'
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
