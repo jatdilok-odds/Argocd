@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: su-smart-applicaitonset
+  name: app-example-applicaitonset
   namespace: argocd
 spec:
   generators:
@@ -10,12 +10,12 @@ spec:
       - namespace: dev
   template:
     metadata:
-      name: new-su-smart-dev
+      name: app-example-dev
       namespace: argocd
     spec:
-      project: new-su-smart
+      project: app-example
       source:    
-        repoURL: 'https://gitlab.odd.limited/nssp/new-su-smart-infra.git'
+        repoURL: 'https://gitlab.com/learning-devops101/argocd.git'
         targetRevision: HEAD
         path: apps/dev
       destination: 
@@ -25,22 +25,3 @@ spec:
         syncOptions:
         - CreateNamespace=true
         automated: {}
-      # metadata:
-      # will generate applications with different names for example (dev-color-app, test-color-app, etc..)
-      # name: '{{Namespace}}-color-app'
-    # spec:
-    #   # applications will be in default project for argocd
-    #   project: 'new-su-smart-{{Namespace}}'
-    #   source:
-    #     repoURL: 'https://gitlab.odd.limited/nssp/new-su-smart-infra.git'
-    #     targetRevision: HEAD
-    #     path: apps/dev
-    #   destination:
-    #     # default cluster as destination, you can define multiple clusters in ArgoCD UI
-    #     server: https://kubernetes.default.svc
-    #     # will deploy to different namespaces as different destinations 
-    #     namespace: '{{Namespace}}'
-    #   syncPolicy:
-    #     syncOptions:
-    #     - CreateNamespace=true
-    #     automated: {}
