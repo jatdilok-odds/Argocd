@@ -8,8 +8,11 @@ spec:
   - list:
       elements:
       - namespace: dev
+        manifestfile: dev
       - namespace: uat
+        manifestfile: uat
       - namespace: prod
+        manifestfile: prod
   template:
     metadata:
       name: 'app-example-{{namespace}}'
@@ -19,7 +22,7 @@ spec:
       source:    
         repoURL: 'https://gitlab.com/learning-devops101/argocd.git'
         targetRevision: HEAD
-        path: apps/dev
+        path: 'apps/{{manifestfile}}'
       destination: 
         server: https://kubernetes.default.svc
         namespace: '{{namespace}}'
