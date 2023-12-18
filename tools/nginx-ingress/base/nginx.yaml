@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-ingress
+  namespace: argocd
+spec:
+  # Specify the project for deployment
+  project: default
+  
+  # Define the destination for the application
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ingress-nginx
+
+  # Specify the sources for the application, including Helm charts and Git repositories
+  sources:
+    - repoURL: 'https://kubernetes.github.io/ingress-nginx'
+      chart: ingress-nginx
+      targetRevision: 8.5.1
+      helm:
+        # Specify Helm values file for customization
+        valueFiles:
+          - $values/cluster-tools/helm-charts/ingress-nginx/values.yaml
+          
+    - repoURL: 'https://github.com/SAKSIAM-TECH/sak-gitops.git'
+      targetRevision: feature/tracing-config
+      ref: values
+
+  # Define synchronization policies for the application
+  syncPolicy:
+    syncOptions:
+      # Enable the creation of the namespace during synchronization
+      - CreateNamespace=true
+
+
+

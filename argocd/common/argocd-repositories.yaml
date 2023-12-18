@@ -7,7 +7,7 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
-  url: https://github.com/argoproj/private-repo
+  url: https://github.com/jatdilok-odds/Argocd.git
 ---
 apiVersion: v1
 kind: Secret
@@ -18,7 +18,7 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
-  url: https://github.com/argoproj/other-private-repo
+  url: https://github.com/jatdilok-odds/argocd-private.git
 ---
 apiVersion: v1
 kind: Secret
@@ -29,6 +29,6 @@ metadata:
     argocd.argoproj.io/secret-type: repo-creds
 stringData:
   type: git
-  url: https://github.com/argoproj
-  password: my-password
-  username: my-username
+  url: https://github.com/jatdilok-odds/argocd-private.git
+  password: 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
+  username: jatdilok-odds
