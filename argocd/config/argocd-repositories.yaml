@@ -1,18 +1,18 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: first-repo
+  name: public-repo
   namespace: argocd
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
-  url: https://github.com/jatdilok-odds/Argocd.git
+  url: https://github.com/jatdilok-odds/argocd-leaning.git
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: second-repo
+  name: private-repo
   namespace: argocd
   labels:
     argocd.argoproj.io/secret-type: repository

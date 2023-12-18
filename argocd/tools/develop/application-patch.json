@@ -1,0 +1,12 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/project",
+    "value": "public-repo"
+  },
+  {
+    "op": "replace",
+    "path": "/spec/sources/0/targetRevision",
+    "value": "8.5.1"
+  }
+]
