@@ -2,7 +2,7 @@ nginx-ingress:
   controller:
     replicaCount: 2
     service:
-      type: LoadBalancer
+      type: NodePort
   defaultBackend:
     enabled: true
 
