@@ -17,7 +17,7 @@ spec:
       project: default
       source:
         repoURL: 'https://github.com/jatdilok-odds/argocd-leaning.git'
-        targetRevision: HEAD
+        targetRevision: main
         path: '{{ valueFiles }}'
         helm:
           releaseName: "{{appName}}"
