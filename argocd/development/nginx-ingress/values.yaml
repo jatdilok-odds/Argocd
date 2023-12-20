@@ -6,6 +6,12 @@ nginx-ingress:
   defaultBackend:
     enabled: true
 
+ingress-nginx:
+  controller:
+    replicaCount: 2
+    service:
+      type: NodePort
+
 controller:
   replicaCount: 2
   service:
