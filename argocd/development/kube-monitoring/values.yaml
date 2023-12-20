@@ -17,6 +17,6 @@ kube-prometheus-stack:
   grafana:
     enabled: true
     namespaceOverride: ""
-    size: 500Mi
+    # size: 500Mi
     # Uncomment and set to the name of an existing PVC if you want to use an existing one
     # existingClaim: my-existing-pvc
