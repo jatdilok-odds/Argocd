@@ -1,0 +1,8 @@
+apiVersion: v2
+name: nginx-ingress
+description: Helm install with nginx-ingress dependency
+version: 0.1.0
+dependencies:
+  - name: nginx-ingress
+    version: "3.35.0" # Replace with the desired version
+    repository: "https://kubernetes.github.io/ingress-nginx"

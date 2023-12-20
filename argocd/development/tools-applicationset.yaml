@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: helm-chart-applicationset
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        appName: nginx-ingress
+        repoURL: 'https://github.com/jatdilok-odds/argocd-leaning.git'
+        nameSpace: nginx-ingress
+        revision: HEAD
+        directories:
+          - path: argocd/development/nginx-ingress/chart.yaml
+  template:
+    metadata:
+      name: '{{ appName }}'
+    spec:
+      project: default
+      source:
+        repoURL: '{{ repoURL }}'
+        targetRevision: HEAD
+        path: '{{path}}'
+        helm:
+          releaseName: "{{appName}}"
+          valueFiles:
+            - 'values.yaml' 
+            - 'argocd/development/nginx-ingress/values.yaml' # Specify the path to your values file relative to the chart directory
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: '{{ nameSpace }}'
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
