@@ -7,8 +7,8 @@
 #     enabled: true
 
 ingress-nginx:
-  controller:
-    replicaCount: 2
+  # controller:
+  #   replicaCount: 2
     service:
       type: NodePort
 
