@@ -1,10 +1,10 @@
-nginx-ingress:
-  controller:
-    replicaCount: 2
-    service:
-      type: NodePort
-  defaultBackend:
-    enabled: true
+# nginx-ingress:
+#   controller:
+#     replicaCount: 2
+#     service:
+#       type: NodePort
+#   defaultBackend:
+#     enabled: true
 
 ingress-nginx:
   controller:
