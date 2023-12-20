@@ -19,6 +19,9 @@ spec:
           - appName: jaeger
             nameSpace: jaeger-system
             valueFiles: argocd/development/jaeger/
+          - appName: kube-monitoring
+            nameSpace: kube-monitoring-system
+            valueFiles: argocd/development/kube-monitoring/
   template:
     metadata:
       name: '{{ appName }}'

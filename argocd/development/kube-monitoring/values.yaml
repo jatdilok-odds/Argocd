@@ -1,0 +1,22 @@
+kube-prometheus-stack:
+  global:
+    rbac:
+      create: true
+  # prometheus:
+  #   prometheusSpec:
+  #     storageSpec:
+  #       volumeClaimTemplate:
+  #         spec:
+  #           storageClassName: gluster
+  #           accessModes: ["ReadWriteOnce"]
+  #           resources:
+  #             requests:
+  #               storage: 5Gi
+  #         selector: {}
+  ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
+  grafana:
+    enabled: true
+    namespaceOverride: ""
+    size: 500Mi
+    # Uncomment and set to the name of an existing PVC if you want to use an existing one
+    # existingClaim: my-existing-pvc
