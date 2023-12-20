@@ -5,27 +5,22 @@ metadata:
   namespace: argocd
 spec:
   generators:
-    - git:
-        appName: nginx-ingress
-        repoURL: 'https://github.com/jatdilok-odds/argocd-leaning.git'
-        nameSpace: nginx-ingress
-        revision: HEAD
-        directories:
-          - path: argocd/development/nginx-ingress/chart.yaml
+    - list:
+        elements:
+          - appName: nginx-ingress
+            nameSpace: nginx-ingress
+            valueFiles: argocd/development/nginx-ingress/
   template:
     metadata:
       name: '{{ appName }}'
     spec:
       project: default
       source:
-        repoURL: '{{ repoURL }}'
+        repoURL: 'https://github.com/jatdilok-odds/argocd-leaning.git'
         targetRevision: HEAD
-        path: '{{path}}'
+        path: '{{ valueFiles }}'
         helm:
           releaseName: "{{appName}}"
-          valueFiles:
-            - 'values.yaml' 
-            - 'argocd/development/nginx-ingress/values.yaml' # Specify the path to your values file relative to the chart directory
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: '{{ nameSpace }}'
