@@ -4,5 +4,5 @@ description: Helm install with nginx-ingress dependency
 version: 0.1.0
 dependencies:
   - name: ingress-nginx
-    version: "3.35.0"
+    version: "4.8.4"
     repository: "https://kubernetes.github.io/ingress-nginx"
