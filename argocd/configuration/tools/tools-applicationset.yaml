@@ -7,6 +7,9 @@ spec:
   generators:
     - list:
         elements:
+          - appName: cert-manager
+            nameSpace: cert-manager
+            valueFiles: argocd/development/cert-manager/
           - appName: nginx-ingress
             nameSpace: nginx-ingress
             valueFiles: argocd/development/nginx-ingress/
