@@ -12,7 +12,7 @@ ingress-nginx:
     service:
       type: NodePort
 
-controller:
-  replicaCount: 2
-  service:
-    type: NodePort
+# controller:
+#   replicaCount: 2
+#   service:
+#     type: NodePort
