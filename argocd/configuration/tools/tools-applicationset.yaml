@@ -10,9 +10,9 @@ spec:
           - appName: cert-manager
             nameSpace: cert-manager
             valueFiles: argocd/development/cert-manager/
-          # - appName: nginx-ingress
-          #   nameSpace: nginx-ingress
-          #   valueFiles: argocd/development/nginx-ingress/
+          - appName: nginx-ingress
+            nameSpace: nginx-ingress
+            valueFiles: argocd/development/nginx-ingress/
           - appName: istio-ingress
             nameSpace: istio-system
             valueFiles: argocd/development/istio-ingress/
