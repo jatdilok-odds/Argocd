@@ -1,6 +1,3 @@
 istiod:
   pilot:
     replicaCount: 2
-
-pilot:
-  replicaCount: 2
