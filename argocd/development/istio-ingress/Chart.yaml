@@ -1,6 +1,6 @@
 apiVersion: v2
 name: istiod
-description: Helm install with nginx-ingress dependency
+description: Helm install with istio-ingress dependency
 version: 0.1.0
 dependencies:
   - name: istiod

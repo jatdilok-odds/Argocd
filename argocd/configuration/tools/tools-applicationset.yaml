@@ -13,6 +13,9 @@ spec:
           - appName: istio-ingress
             nameSpace: istio-system
             valueFiles: argocd/development/istio-ingress/
+          - appName: jaeger
+            nameSpace: jaeger-system
+            valueFiles: argocd/development/jaeger/
   template:
     metadata:
       name: '{{ appName }}'

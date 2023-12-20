@@ -1,0 +1,8 @@
+apiVersion: v2
+name: jaeger
+description: Helm install with jaeger dependency
+version: 0.1.0
+dependencies:
+  - name: jaeger-operator
+    version: "2.49.0"
+    repository: "https://jaegertracing.github.io/helm-charts"

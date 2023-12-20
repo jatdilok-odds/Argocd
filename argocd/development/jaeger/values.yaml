@@ -1,0 +1,4 @@
+jaeger-operator:
+  image:
+    repository: jaegertracing/jaeger-operator
+    tag: 1.49.0

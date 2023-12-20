@@ -1,0 +1,5 @@
+elasticsearch:
+  replicaCount: 2
+
+jaeger-operator:
+  replicaCount: 2

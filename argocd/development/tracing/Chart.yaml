@@ -1,0 +1,11 @@
+apiVersion: v2
+name: elasticsearch
+description: Helm install with nginx-ingress dependency
+version: 0.1.0
+dependencies:
+  - name: elasticsearch
+    version: "8.5.1"
+    repository: "https://helm.elastic.co"
+  - name: jaeger-operator
+    version: "2.49.0"
+    repository: "https://jaegertracing.github.io/helm-charts"
