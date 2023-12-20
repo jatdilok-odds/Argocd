@@ -5,3 +5,8 @@ nginx-ingress:
       type: LoadBalancer
   defaultBackend:
     enabled: true
+
+controller:
+  replicaCount: 2
+  service:
+    type: NodePort
