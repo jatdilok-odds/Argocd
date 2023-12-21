@@ -1,8 +1,17 @@
 loki-stack:
   loki:
+    enabled: true
     image:
       tag: 2.9.3
-    enabled: true
+    persistence:
+      enabled: false
+      accessModes:
+      - ReadWriteOnce
+      size: 10Gi
+      # storageClassName:
+    table_manager:
+      retention_deletes_enabled: false
+      retention_period: 90d
 
   promtail:
     enabled: true
