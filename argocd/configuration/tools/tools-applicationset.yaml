@@ -26,7 +26,7 @@ spec:
           - appName: kube-monitoring
             nameSpace: kube-monitoring-system
             valueFiles: argocd/development/kube-monitoring/
-            ServerSide: true
+            ServerSide: true #Ignore some resource management with ArgoCD
           - appName: logging-system
             nameSpace: logging-system
             valueFiles: argocd/development/logging/
