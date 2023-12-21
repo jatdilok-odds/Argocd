@@ -2,6 +2,10 @@ kube-prometheus-stack:
   global:
     rbac:
       create: true
+
+  crds:
+    enabled: true
+
   # prometheus:
   #   prometheusSpec:
   #     storageSpec:
