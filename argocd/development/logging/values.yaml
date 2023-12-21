@@ -1,0 +1,12 @@
+loki-stack:
+  loki:
+    image:
+      tag: 2.9.3
+    enabled: true
+
+  promtail:
+    enabled: true
+
+  grafana:
+    enabled: false
+  
