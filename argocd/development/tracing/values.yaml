@@ -23,6 +23,3 @@ elasticsearch:
     resources:
       requests:
         storage: 5Gi
-
-jaeger-operator:
-  replicaCount: 1

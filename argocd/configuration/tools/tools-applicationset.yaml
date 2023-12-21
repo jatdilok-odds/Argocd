@@ -22,6 +22,9 @@ spec:
           - appName: kube-monitoring
             nameSpace: kube-monitoring-system
             valueFiles: argocd/development/kube-monitoring/
+          - appName: logging-system
+            nameSpace: logging-system
+            valueFiles: argocd/development/logging/
   template:
     metadata:
       name: '{{ appName }}'
