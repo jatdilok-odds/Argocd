@@ -10,21 +10,31 @@ spec:
           - appName: cert-manager
             nameSpace: cert-manager
             valueFiles: argocd/development/cert-manager/
+            ServerSide: false
           - appName: nginx-ingress
             nameSpace: nginx-ingress
             valueFiles: argocd/development/nginx-ingress/
+            ServerSide: false
           - appName: istio-ingress
             nameSpace: istio-system
             valueFiles: argocd/development/istio-ingress/
+            ServerSide: false
           - appName: jaeger
             nameSpace: jaeger-system
             valueFiles: argocd/development/jaeger/
+            ServerSide: false
           - appName: kube-monitoring
             nameSpace: kube-monitoring-system
             valueFiles: argocd/development/kube-monitoring/
+            ServerSide: true
           - appName: logging-system
             nameSpace: logging-system
             valueFiles: argocd/development/logging/
+            ServerSide: false
+          - appName: tracing
+            nameSpace: tracing-system
+            valueFiles: argocd/development/tracing/
+            ServerSide: false
   template:
     metadata:
       name: '{{ appName }}'
@@ -44,4 +54,4 @@ spec:
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
-        - ServerSideApply=true
+        - ServerSideApply= '{{ ServerSide }}'

@@ -18,8 +18,8 @@ elasticsearch:
       cpu: "1000m"
       memory: "2Gi"
   networkHost: "0.0.0.0"
-  volumeClaimTemplate:
-    accessModes: ["ReadWriteOnce"]
-    resources:
-      requests:
-        storage: 5Gi
+  # volumeClaimTemplate:
+  #   accessModes: ["ReadWriteOnce"]
+  #   resources:
+  #     requests:
+  #       storage: 5Gi
